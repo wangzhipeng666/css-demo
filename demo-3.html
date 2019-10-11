@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>使用transform描绘1px边框</title>
+  <style>
+    .onepx-border {
+      width: 200px;
+      height: 80px;
+      cursor: pointer;
+      line-height: 80px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 50px;
+      color: red;
+    }
+    .normal {
+      border: 1px solid red;
+    }
+    .thin {
+      position: relative;
+    }
+    .thin::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 1px solid red;
+      width: 200%;
+      height: 200%;
+      content: "";
+      transform: scale(0.5);
+      transform-origin: left top;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="onepx-border normal">1px</div>
+    <div class="onepx-border thin">0.5px</div>
+  </div>
+</body>
+</html>
