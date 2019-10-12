@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>使用attr()抓取data-*</title>
+  <style>
+    .wrap {
+      display: flex;
+    }
+    .tooltips {
+      position: relative;
+      margin-top: 40px;
+      padding: 0 20px;
+      border-radius: 10px;
+      height: 40px;
+      background-color: purple;
+      line-height: 40px;
+      color: orange;
+    }
+    .tooltips::after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 5px;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(#000, .5);
+      opacity: 0;
+      text-align: center;
+      font-size: 12px;
+      content: attr(data-msg);
+      transition: all 3000ms;
+    }
+    .tooltips:first-child {
+      margin-top: 0;
+    }
+    .tooltips:hover::after {
+      left: calc(100% + 20px);
+      opacity: 1;
+    }
+    .tooltips[href]:empty::before {
+      content: attr(href);
+    }
+    .tooltips[href]:empty:hover::after {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+      <a class="tooltips" href="https://www.baidu.com" data-msg="Hello World">提示框</a>
+      <a class="tooltips" href="https://www.baidu.com"></a>
+  </div>
+</body>
+</html>
