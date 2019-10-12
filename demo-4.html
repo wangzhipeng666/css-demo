@@ -116,8 +116,8 @@
       function toTime() {
         var date = new Date();
         var seconds = date.getSeconds();
-        var minutes = date.getMinutes();
-        var hours = date.getHours();
+        var minutes = date.getMinutes() + seconds/60;
+        var hours = date.getHours() + minutes/60;
 
         second.style.transform = 'rotate('+seconds*6+'deg)';
         minute.style.transform = 'rotate('+minutes*6+'deg)';
