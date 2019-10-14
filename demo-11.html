@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>使用max-height切换自动高度</title>
+  <style>
+    ul, li {
+      list-style-type: none;
+    }
+    p {
+      margin-top: -16px;
+    }
+    .auto-height {
+      width: 300px;
+    }
+    .auto-height li {
+      margin-top: 5px;
+      cursor: pointer;
+    }
+    .auto-height li:first-child {
+      margin-top: 0;
+    }
+    .auto-height li:hover p {
+      border-bottom-width: 1px;
+			max-height: 400px;
+    }
+    h3 {
+      padding: 0 20px;
+      height: 40px;
+      background-color: red;
+      cursor: pointer;
+      line-height: 40px;
+      font-size: 16px;
+      color: #fff;
+    }
+    p {
+      overflow: hidden;
+      padding: 0 20px;
+      border: 1px solid red;
+      border-top: none;
+      border-bottom-width: 0;
+      max-height: 0;
+      line-height: 30px;
+      transition: all 500ms;
+    }
+  </style>
+</head>
+<body>
+    <div class="bruce flex-ct-x">
+      <ul class="auto-height">
+        <li>
+          <h3>列表1</h3>
+          <p>内容1<br>内容2<br>内容3<br>内容4</p>
+        </li>
+        <li>
+          <h3>列表2</h3>
+          <p>内容1<br>内容2<br>内容3<br>内容4</p>
+        </li>
+        <li>
+          <h3>列表3</h3>
+          <p>内容1<br>内容2<br>内容3<br>内容4</p>
+        </li>
+      </ul>
+    </div>
+</body>
+</html>
