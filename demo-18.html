@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>使用linear-gradient描绘波浪线</title>
+  <style>
+    .waveline-text {
+      height: 20px;
+      line-height: 20px;
+      letter-spacing: 10px;
+      position: relative;
+    }
+    .waveline-text::after {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 120px;
+      height: 10px;
+      background: linear-gradient(135deg, transparent, transparent 45%, red, transparent 55%, transparent 100%), linear-gradient(45deg, transparent, transparent 45%, red, transparent 55%, transparent 100%);
+      background-size: 20px 20px;
+      content: "";
+    }
+  </style>
+</head>
+<body>
+    <div class="bruce flex-ct-x">
+      <p class="waveline-text">波浪线文字</p>
+    </div>
+</body>
+</html>
