@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>使用box-shadow裁剪图像</title>
+  <style>
+    .img-cliper {
+      overflow: hidden;
+      position: relative;
+    }
+    .img-cliper img {
+      width: 400px;
+    }
+    i {
+      position: absolute;
+      left: 50px;
+      top: 30px;
+      border-radius: 100%;
+      width: 100px;
+      height: 50px;
+      box-shadow: 0 0 0 9999px rgba(#000, .5);
+    }
+    .mask {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+    <div class="bruce flex-ct-x">
+      <div class="img-cliper">
+        <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1009691020,2126832993&fm=26&gp=0.jpgs">
+        <div class="mask">
+          <i></i>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
